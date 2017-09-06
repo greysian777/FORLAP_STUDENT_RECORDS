@@ -8,6 +8,7 @@ for($id = 0; $id <= 20; $id+=20)
 	
 	
 	 $url = ("https://forlap.ristekdikti.go.id/mahasiswa/search/".$id);
-  		echo $url; 
+  		$link = file_get_html($url) ;
+			echo $link;
 	}
 ?>
