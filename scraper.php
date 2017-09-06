@@ -9,5 +9,5 @@ for($id = 0; $id <= 2; $id+20)
   echo $url;
   
   //	$link2 = file_get_html($url);
-   
+}
 ?>
