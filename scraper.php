@@ -8,6 +8,6 @@ for($id = 0; $id <= 40; $id)
 	
 	$id += 20;
 	 $url = ("https://forlap.ristekdikti.go.id/mahasiswa/search/".$id);
-  		echo "URL OF PROFILE = " .$url . '<br/>' ; 
+  		echo "URL OF PROFILE = " .$url . '<br>' ; 
 	}
 ?>
