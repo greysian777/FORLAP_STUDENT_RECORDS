@@ -7,7 +7,7 @@ for($id = 20;$id <= 20; $id+=20)
 	{
 	
 	
-	 $url = ("https://forlap.ristekdikti.go.id/prodi/search/".$id);
+	 $url = ("https://forlap.ristekdikti.go.id/prodi/search/20");
   		$link = file_get_html($url) ;
 			echo $link;
 	}
