@@ -17,5 +17,7 @@ function get_data($url) {
 	return $data;
 }
   		$link = file_get_html($url) ;
-			echo $link;
+		$click = $link->selectButton('Mahasiswa')->form();
+echo $click;
+
 ?>
