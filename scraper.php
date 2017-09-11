@@ -18,7 +18,7 @@ function get_data($url) {
 }
   		$link = file_get_html($url) ;
 		foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element){
-		$link = $element->find("td[3]/a" , 0);
+		$link = $element->find("td[3]/a" , 0)->href;
 			echo $link;
 		}
 
