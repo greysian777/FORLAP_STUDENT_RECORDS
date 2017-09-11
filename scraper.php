@@ -16,10 +16,13 @@ function get_data($url) {
 	curl_close($ch);
 	return $data;
 }
-  		$link = file_get_html($url) ;
+  		$link = file_get_html($url);
 		foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element){
-		$link = $element->find("td[3]/a" , 0)->href;
-			echo $link;
+		$linkof = $element->find("td[3]/a" , 0)->href;
+			if($link != null){
+					$view = file_get_html($linkof);
+				echo $view;
+			}
 		}
 
 ?>
