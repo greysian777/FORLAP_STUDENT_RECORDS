@@ -3,7 +3,7 @@ require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
 
 	
-	 $url = ("https://forlap.ristekdikti.go.id/prodi/detail/QzZGQjk3NkUtQURCMC00NDBCLTk1NTEtNDY1QkYxMUZENDE2/0");
+	 $url = ("https://forlap.ristekdikti.go.id/prodi/detail/NEE1RjZCOTItRjRBOS00RTQ4LTgzN0ItRjBFMjVGOTRGQkIz");
 
 /* gets the data from a URL */
 function get_data($url) {
@@ -19,7 +19,7 @@ function get_data($url) {
   		$link = file_get_html($url);
 		foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element){
 		$linkof = $element->find("td[3]/a" , 0)->href;
-			if($link != null){
+			if($linkof != null){
 					$view = file_get_html($linkof);
 				echo $view;
 			}
