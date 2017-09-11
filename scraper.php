@@ -17,7 +17,8 @@ function get_data($url) {
 	return $data;
 }
   		$link = file_get_html($url) ;
-		$click = $link->selectButton('Mahasiswa')->form();
-echo $click;
+		foreach($link->find("//[@id='mahasiswa']/table/tbody") as $element){
+		echo $element;
+		}
 
 ?>
