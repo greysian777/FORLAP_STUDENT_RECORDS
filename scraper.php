@@ -9,30 +9,30 @@ for($i = 0; $i < count($links); $i++)
 			{
 				foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element)
 					{
-						$totalcountofstudenteachsemester	= $element->find("td[3]/a" , 0);
-						$student 	= $element->find("td[3]/a" , 0)->href;
-					if($student != null || $student != "") 
-					{
-						$page = file_get_html($student);
-						if($page)
-						{	
-							foreach($page->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/div/ul/li")as $studentname)
-							{
-								$link_of_pages = $studentname->find("a" , 0)->href;
-								if($link_of_pages == true)
-								{
-									
-									echo $link_of_pages;
-									echo "<br/>";
-									
-									//$pagesofstudetdetails = file_get_html($link_of_pages);
-								}
-							}
+						$totalcountofstudenteachsemester	= $element->find("td[3]/a" , 0)->plaintext;
+						
+						$number = $totalcountofstudenteachsemester / 20;
+						$Pages =(int)$number;
+						echo $student 	= $element->find("td[3]/a" , 0)->href;
+						
+						for($loop = 0; $loop <= $totalcountofstudenteachsemester; $loop+=20)
+						{
+							
+							$urls =  $student . "/". $loop;
+							$DAKUMENTPAGE = file_get_html($urls);
+							
+							
+							
 						}
-					}
-				
+						
+						
+						
+						
 					}
 			}
 	}
+
+
+
 
 ?>
