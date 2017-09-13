@@ -37,14 +37,14 @@ for($i = 0; $i < count($links); $i++)
 											 foreach($Pagestudent1->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr")as $Pagestudent)
 											 {
 												 //This is Details of Students.
-									$Nama 				= $Pagestudent->find("./tr[1]/td[3]",0)->plaintext;
-									$Jenis  			= $Pagestudent->find("./tr[2]/td[3]",0)->plaintext;
-									$Perguruan   			= $Pagestudent->find("./tr[4]/td[3]",0)->plaintext;
-									$Program    			= $Pagestudent->find("./tr[5]/td[3]",0)->plaintext;
-									$Nomor     			= $Pagestudent->find("./tr[6]/td[3]",0)->plaintext;
-									$Semester			= $Pagestudent->find("./tr[7]/td[3]",0)->plaintext;
-									$Status_Awal 			= $Pagestudent->find("./tr[8]/td[3]",0)->plaintext;
-									$Status_Mahasiswa		= $Pagestudent->find("./tr[9]/td[3]",0)->plaintext;
+									$Nama 				= $Pagestudent->find("td[3]",0)->plaintext;
+									$Jenis  			= $Pagestudent->find("td[3]",1->plaintext;
+									$Perguruan   			= $Pagestudent->find("td[3]",3)->plaintext;
+									$Program    			= $Pagestudent->find("td[3]",4)->plaintext;
+									$Nomor     			= $Pagestudent->find("td[3]",5)->plaintext;
+									$Semester			= $Pagestudent->find("td[3]",6)->plaintext;
+									$Status_Awal 			= $Pagestudent->find("td[3]",7)->plaintext;
+									$Status_Mahasiswa		= $Pagestudent->find("td[3]",8)->plaintext;
 						scraperwiki::save_sqlite(array('name'), array('name' => $Nomor, 'Nama' => $Nama));
 
 /*
