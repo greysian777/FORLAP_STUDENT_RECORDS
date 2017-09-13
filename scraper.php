@@ -52,8 +52,8 @@ scraperwiki::save_sqlite(array('name'), array('name' => $Nomor,
                                              'Program' => $Program, 
                                              'Semester' => $Semester, 
                                              'Status_Awal' => $Status_Awal, 
-                                             'Status_Mahasiswa' => $Status_Mahasiswa, 
-                                             'linkofstudentprofile' => $Pagestudent
+                                             'Status_Mahasiswa' => $Status_Mahasiswa
+                                             
                                              ));													    
 											 }
 																						
