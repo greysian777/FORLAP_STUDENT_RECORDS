@@ -30,18 +30,32 @@ for($i = 0; $i < count($links); $i++)
 										$NIM = $SARTOUT->find("td", 1)->plaintext;
 										$Name = $SARTOUT->find("td" , 2)->plaintext;
 										$Namehref = $SARTOUT->find("td/a" , 0)->href;
-									echo $SerNo . "=> " . $NIM . "--" . $Name . "--"  . $Namehref;	
-									echo "<br/>";
-									echo "<br/>";
-								/*
-										if($Name)
+										if($SerNo == true)
 										{
-											$prof = file_get_html($Name);
-											echo $prof;
+											 $Pagestudent =  file_get_html($Namehref++);
+											if($pagestudent){
+												echo $SerailNoofInnerPage = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0);
+												echo "<br/>";
+												echo "<br/>";
+												
+											}
+																			
 										}
 										else{
 											break;
-										} */
+										}
+										
+										
+										
+										
+									/* echo $SerNo . "=> " . $NIM . "--" . $Name . "--"  . $Namehref;	
+									echo "<br/>";
+									echo "<br/>"; */
+								
+									
+										
+										
+										
 									}
 								}
 							}
@@ -55,5 +69,7 @@ for($i = 0; $i < count($links); $i++)
 					}
 			}
 	}
+
+
 
 ?>
