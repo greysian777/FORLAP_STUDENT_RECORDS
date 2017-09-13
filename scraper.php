@@ -47,7 +47,7 @@ for($i = 0; $i < count($links); $i++)
 										
 								
 		scraperwiki::save_sqlite(array('Nomor'), 
-    array('Nomor => $info['Nomor'], 
+    array('Nomor' => $info['Nomor'], 
           'Nama' => $info['Nama'], 
           'Jenis' => $info['Jenis'],
           'Perguruan' => $info['Perguruan'],
