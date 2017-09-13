@@ -45,7 +45,7 @@ for($i = 0; $i < count($links); $i++)
 									$Semester			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
 									$Status_Awal 			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
 									$Status_Mahasiswa		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;
-						scraperwiki::save_sqlite(array('name'), array('name' => '$Nomor', 'Nama' => '$Nama'));
+						scraperwiki::save_sqlite(array('name'), array('name' => $Nomor, 'Nama' => $Nama));
 
 /*
 												 scraperwiki::save_sqlite(array('name'), array('name' => $Nomor,
