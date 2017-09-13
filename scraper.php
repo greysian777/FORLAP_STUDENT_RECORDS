@@ -1,8 +1,7 @@
 <?
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
-require "simple_html_dom.php";
-error_reporting(0);
+
 $links = array("https://forlap.ristekdikti.go.id/prodi/detail/NEE1RjZCOTItRjRBOS00RTQ4LTgzN0ItRjBFMjVGOTRGQkIz");
 for($i = 0; $i < count($links); $i++)
 	{
