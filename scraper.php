@@ -30,7 +30,6 @@ for($i = 0; $i < count($links); $i++)
 										$NIM = $SARTOUT->find("td", 1)->plaintext;
 										$Name = $SARTOUT->find("td" , 2)->plaintext;
 										$Namehref = $SARTOUT->find("td/a" , 0)->href;
-																		 $Pagestudent =  file_get_html($Namehref++);
 									
 									if($Namehref  != null)	
 									{
