@@ -47,14 +47,14 @@ for($i = 0; $i < count($links); $i++)
 										
 								
 		scraperwiki::save_sqlite(array('Nomor'), 
-    array('Nomor => $Nomor, 
-          'Nama' => (trim($info['Nama'])), 
-          'Jenis' => (trim($info['Jenis'])),
-          'Perguruan' => (trim($info['Perguruan'])),
-          'information_year' => (trim($info['doc_infoyear'])),
-          'Semester' => (trim($info['Semester'])),
-          'Status_Awal' => (trim($info['Status_Awal'])),
-          'Status_Mahasiswa' => (trim($info['Status_Mahasiswa']))
+    array('Nomor => $info['Nomor'], 
+          'Nama' => $info['Nama'], 
+          'Jenis' => $info['Jenis'],
+          'Perguruan' => $info['Perguruan'],
+          'information_year' => $info['doc_infoyear'],
+          'Semester' => $info['Semester'],
+          'Status_Awal' => $info['Status_Awal'],
+          'Status_Mahasiswa' => $info['Status_Mahasiswa']
           
     ));
 								
