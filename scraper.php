@@ -1,7 +1,6 @@
 <?
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
-
 $links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC00QUJBLUI3REYtODU4REFBRkQ4OTRC");
 for($i = 0; $i < count($links); $i++)
 	{
@@ -33,32 +32,32 @@ for($i = 0; $i < count($links); $i++)
 										$Namehref = $SARTOUT->find("td/a" , 0)->href;
 										if($SerNo != null || $SerNo != "")
 										{
-											 $Pagestudent1 =  file_get_html($Namehref++);
-											 foreach($Pagestudent1->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr")as $Pagestudent)
+											 $Pagestudent =  file_get_html($Namehref++);
+											 if($Pagestudent)
 											 {
 												 //This is Details of Students.
-									$Nama 				= $Pagestudent->find("td[3]",0)->plaintext;
-									$Jenis  			= $Pagestudent->find("td[3]",1->plaintext;
-									$Perguruan   			= $Pagestudent->find("td[3]",3)->plaintext;
-									$Program    			= $Pagestudent->find("td[3]",4)->plaintext;
-									$Nomor     			= $Pagestudent->find("td[3]",5)->plaintext;
-									$Semester			= $Pagestudent->find("td[3]",6)->plaintext;
-									$Status_Awal 			= $Pagestudent->find("td[3]",7)->plaintext;
-									$Status_Mahasiswa		= $Pagestudent->find("td[3]",8)->plaintext;
-						scraperwiki::save_sqlite(array('name'), array('name' => $Nomor, 'Nama' => $Nama));
-
-/*
-												 scraperwiki::save_sqlite(array('name'), array('name' => $Nomor,
-                                             'Nama' => $Nama,
-                                             'Jenis' => $Jenis, 
-                                             'Perguruan' => $Perguruan, 
-                                             'Program' => $Program, 
-                                             'Semester' => $Semester, 
-                                             'Status_Awal' => $Status_Awal, 
-                                             'Status_Mahasiswa' => $Status_Mahasiswa
-                                             
-                                             ));
-*/
+									$info['Nama'] 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0);
+									$info['Jenis']  			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
+									$info['Perguruan']   		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
+									$info['Program']    		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
+									$info['Nomor']     			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
+									$info['Semester']			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
+									$info['Status_Awal'] 		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
+									$info['Status_Mahasiswa']	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;
+										
+								
+		scraperwiki::save_sqlite(array('mci_snum','Nama'), 
+    array('Nomor => $Nomor, 
+          'Nama' => (trim($info['Nama'])), 
+          'Jenis' => (trim($info['Jenis'])),
+          'Perguruan' => (trim($info['Perguruan'])),
+          'information_year' => (trim($info['doc_infoyear'])),
+          'Semester' => (trim($info['Semester'])),
+          'Status_Awal' => (trim($info['Status_Awal'])),
+          'Status_Mahasiswa' => (trim($info['Status_Mahasiswa']))
+          
+    ));
+								
 											 }
 																						
 										}
