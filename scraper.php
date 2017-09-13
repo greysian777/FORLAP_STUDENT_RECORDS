@@ -33,8 +33,8 @@ for($i = 0; $i < count($links); $i++)
 										$Namehref = $SARTOUT->find("td/a" , 0)->href;
 										if($SerNo != null || $SerNo != "")
 										{
-											 $Pagestudent =+  file_get_html($Namehref);
-											 if($Pagestudent)
+											 $Pagestudent =  file_get_html($Namehref);
+											 if($Pagestudent++)
 											 {
 												 //This is Details of Students.
 									$Nama 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
