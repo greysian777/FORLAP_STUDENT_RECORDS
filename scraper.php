@@ -34,7 +34,7 @@ for($i = 0; $i < count($links); $i++)
 									
 									if($Namehref  != null)	
 									{
-										$Pagestudent =  file_get_html($Namehref++);
+										$Pagestudent =  file_get_html($Namehref);
 										
 										//This is Details of Students.
 									$info['Nama'] 			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
