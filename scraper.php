@@ -1,6 +1,7 @@
 <?
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
+error_reporting(0);
 $links = array("https://forlap.ristekdikti.go.id/prodi/detail/NEE1RjZCOTItRjRBOS00RTQ4LTgzN0ItRjBFMjVGOTRGQkIz");
 for($i = 0; $i < count($links); $i++)
 	{
@@ -26,10 +27,13 @@ for($i = 0; $i < count($links); $i++)
 									foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
 									{
 										$SerNo = $SARTOUT->find("td", 0)->plaintext;
-										$NIM = $SARTOUT->find("td", 0)->plaintext;
-									echo	$Name = $SARTOUT->find("td/a", 0)->href;
+										$NIM = $SARTOUT->find("td", 1)->plaintext;
+										$Name = $SARTOUT->find("td" , 2)->plaintext;
+										$Namehref = $SARTOUT->find("td/a" , 0)->href;
+									echo $SerNo . "=> " . $NIM . "--" . $Name . "--"  . $Namehref;	
 									echo "<br/>";
-										/*
+									echo "<br/>";
+								/*
 										if($Name)
 										{
 											$prof = file_get_html($Name);
