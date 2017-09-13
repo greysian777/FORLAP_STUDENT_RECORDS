@@ -33,7 +33,7 @@ for($i = 0; $i < count($links); $i++)
 										$Namehref = $SARTOUT->find("td/a" , 0)->href;
 										if($SerNo != null || $SerNo != "")
 										{
-											 $Pagestudent =  file_get_html($Namehref++);
+											 $Pagestudent =+  file_get_html($Namehref);
 											 if($Pagestudent)
 											 {
 												 //This is Details of Students.
