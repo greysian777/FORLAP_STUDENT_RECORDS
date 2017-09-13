@@ -19,8 +19,9 @@ for($i = 0; $i < count($links); $i++)
 						{
 							
 							$urls =  $student . "/". $loop;
-							$DAKUMENTPAGE = file_get_html($urls);
-							
+							if($urls != "/0"){
+							echo $DAKUMENTPAGE = file_get_html($urls);
+							}
 							
 							
 						}
