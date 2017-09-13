@@ -33,15 +33,13 @@ for($i = 0; $i < count($links); $i++)
 										if($SerNo != null || $SerNo != "")
 										{
 											 $Pagestudent =  file_get_html($Namehref++);
-											 if($Pagestudent)
-											 {
-												 //This is Details of Students.
-									$info['Nama'] 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
-									$info['Jenis']  			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
+																							 //This is Details of Students.
+									$info['Nama'] 			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
+									$info['Jenis']  		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
 									$info['Perguruan']   		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
 									$info['Program']    		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
-									$info['Nomor']     			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
-									$info['Semester']			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
+									$info['Nomor']     		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
+									$info['Semester']		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
 									$info['Status_Awal'] 		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
 									$info['Status_Mahasiswa']	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;
 										
@@ -51,7 +49,6 @@ for($i = 0; $i < count($links); $i++)
           'Nama' => $info['Nama'], 
           'Jenis' => $info['Jenis'],
           'Perguruan' => $info['Perguruan'],
-          'information_year' => $info['doc_infoyear'],
           'Semester' => $info['Semester'],
           'Status_Awal' => $info['Status_Awal'],
           'Status_Mahasiswa' => $info['Status_Mahasiswa']
@@ -76,7 +73,7 @@ for($i = 0; $i < count($links); $i++)
 										
 										
 										
-									}
+									
 								}
 							}
 							
