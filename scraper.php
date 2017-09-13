@@ -27,7 +27,7 @@ for($i = 0; $i < count($links); $i++)
 									{
 										$SerNo = $SARTOUT->find("td", 0)->plaintext;
 										$NIM = $SARTOUT->find("td", 0)->plaintext;
-									echo	$Name = $SARTOUT->find("td/a")->href;
+									echo	$Name = $SARTOUT->find("td/a", 0)->href;
 									echo "<br/>";
 										/*
 										if($Name)
