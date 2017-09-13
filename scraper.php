@@ -20,7 +20,26 @@ for($i = 0; $i < count($links); $i++)
 							
 							$urls =  $student . "/". $loop;
 							if($urls != "/0"){
-							echo $DAKUMENTPAGE = file_get_html($urls);
+							$DAKUMENTPAGE = file_get_html($urls);
+								if($DAKUMENTPAGE)
+								{
+									foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
+									{
+										$SerNo = $SARTOUT->find("td", 0)->plaintext;
+										$NIM = $SARTOUT->find("td", 0)->plaintext;
+									echo	$Name = $SARTOUT->find("td/a")->href;
+									echo "<br/>";
+										/*
+										if($Name)
+										{
+											$prof = file_get_html($Name);
+											echo $prof;
+										}
+										else{
+											break;
+										} */
+									}
+								}
 							}
 							
 							
@@ -32,8 +51,5 @@ for($i = 0; $i < count($links); $i++)
 					}
 			}
 	}
-
-
-
 
 ?>
