@@ -18,7 +18,7 @@ for($i = 0; $i < count($links); $i++)
 						{
 							
 							$urls =  $student . "/". $loop;
-							if(is_onject($urls))
+							if(is_object($urls))
 							{
 							$DAKUMENTPAGE = file_get_html($urls);
 								if(is_object($DAKUMENTPAGE))
