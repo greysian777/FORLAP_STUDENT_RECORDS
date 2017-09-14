@@ -18,7 +18,7 @@ for($i = 0; $i < count($links); $i++)
 						{
 							
 							$urls =  $student . "/". $loop;
-							if($urls != "/0")
+							if($urls != "/0" || $urls != null || $urls != "")
 							{
 							$DAKUMENTPAGE = file_get_html($urls);
 								if($DAKUMENTPAGE  != null || $DAKUMENTPAGE != "")
@@ -33,8 +33,8 @@ for($i = 0; $i < count($links); $i++)
 										$data = array($Namehref);
 										for($loopo = 0 ; $loopo < sizeof($data); $loopo++)
 										{
-												$URL += $data[$loopo];
-												$Pagestudent = file_get_html($URL);
+												// $URL = $data[$loopo];
+												$Pagestudent = file_get_html($data[$loopo]);
 												
 											if($Pagestudent != null || $Pagestudent != "")
 											{
