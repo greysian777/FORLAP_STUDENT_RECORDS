@@ -33,8 +33,8 @@ for($i = 0; $i < count($links); $i++)
 										$data = array($Namehref);
 										for($loopo = 0 ; $loopo < sizeof($data); $loopo++)
 										{
-												$URL = $data[$loopo];
-												$Pagestudent += file_get_html($URL);
+												$URL += $data[$loopo];
+												$Pagestudent = file_get_html($URL);
 												
 											if($Pagestudent != null || $Pagestudent != "")
 											{
