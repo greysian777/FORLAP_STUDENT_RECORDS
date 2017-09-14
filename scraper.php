@@ -26,8 +26,12 @@ for($i = 0; $i < count($links); $i++)
 										$SerNo 		= $SARTOUT->find("td", 0)->plaintext;
 										$NIM 		= $SARTOUT->find("td", 1)->plaintext;
 										$Name 		= $SARTOUT->find("td" , 2)->plaintext;
-										$Namehref 	= $SARTOUT->find("td/a" , 1)->href;
+										$Namehref 	= $SARTOUT->find("td/a" , 0)->href;
+									
+										if($Namehref != null || $Namehref != "")
+										{
 										echo "1 = >" . $Namehref;
+										}
 										/*	$Pagestudent = file_get_html($Namehref);
 											if($Pagestudent)
 											{
