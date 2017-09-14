@@ -5,7 +5,13 @@ $links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC
 for($i = 0; $i < count($links); $i++)
 	{
 			$link = file_get_html($links[$i]);
-			echo $link;
+			if($link)
+				{
+			foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element)
+			{
+				echo $element;
+			}
+
 	
 	}
 
