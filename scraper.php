@@ -5,9 +5,7 @@ $links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC
 for($i = 0; $i < count($links); $i++)
 	{
 			$link = file_get_html($links[$i]);
-			if($link)
-			{
-				foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element)
+			foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element)
 					{
 					if(is_object($element)){
 						$totalcountofstudenteachsemester	= $element->find("td[3]/a" , 0)->plaintext;
@@ -61,8 +59,7 @@ for($i = 0; $i < count($links); $i++)
                                              'Status_Mahasiswa' => $Status_Mahasiswa));				
 											
 									
-											}	
-										}								
+																		
 
 									}
 								}
