@@ -6,5 +6,7 @@ for($i = 0; $i < count($links); $i++)
 	{
 			$link = file_get_html($links[$i]);
 			echo $link;
+	
+	}
 
 ?>
