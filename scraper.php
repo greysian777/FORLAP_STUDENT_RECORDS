@@ -18,7 +18,7 @@ for($i = 0; $i < count($links); $i++)
 						for($loop = 0; $loop <= $totalcountofstudenteachsemester; $loop+=20)
 						{
 							$urls =  $student . "/". $loop;
-							if($urls != "/0" || $urls != /0)
+							if($urls !== "/0")
 							{
 								echo $urls;
 							}
