@@ -1,6 +1,7 @@
 <?
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
+error_reporting(0);
 $links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC00QUJBLUI3REYtODU4REFBRkQ4OTRC");
 for($i = 0; $i < count($links); $i++)
 	{
@@ -41,12 +42,12 @@ for($i = 0; $i < count($links); $i++)
 											//This is Details of Students.
 											$Nama 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
 											$Jenis  			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
-											$Perguruan   		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
-											$Program    		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
+											$Perguruan   			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
+											$Program    			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
 											$Nomor     			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
 											$Semester			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
-											$Status_Awal 		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
-											$Status_Mahasiswa	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;												
+											$Status_Awal 			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
+											$Status_Mahasiswa		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;												
 											
 
 					scraperwiki::save_sqlite(array('name'), array('name' => $Nomor,
@@ -56,9 +57,7 @@ for($i = 0; $i < count($links); $i++)
                                              'Program' => $Program, 
                                              'Semester' => $Semester, 
                                              'Status_Awal' => $Status_Awal, 
-                                             'Status_Mahasiswa' => $Status_Mahasiswa
-                                             
-                                             ));				
+                                             'Status_Mahasiswa' => $Status_Mahasiswa));				
 										
 									
 								
