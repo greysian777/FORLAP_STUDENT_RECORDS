@@ -21,7 +21,13 @@ for($i = 0; $i < count($links); $i++)
 							if($urls !== "/0")
 							{
 								$DAKUMENTPAGE = file_get_html($urls);
-								echo $DAKUMENTPAGE;
+								foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
+									{
+										$SerNo = $SARTOUT->find("td", 0)->plaintext;
+										$NIM = $SARTOUT->find("td", 1)->plaintext;
+										$Name = $SARTOUT->find("td" , 2)->plaintext;
+										echo $Namehref = $SARTOUT->find("td/a" , 0)->href;
+									}
 							}
 						}
 				
