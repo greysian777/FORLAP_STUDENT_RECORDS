@@ -5,10 +5,11 @@ $links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC
 for($i = 0; $i < count($links); $i++)
 	{
 			$link = file_get_html($links[$i]);
-			if(is_object($link))
+			if($link)
 			{
 				foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element)
 					{
+					if(is_object($element)){
 						$totalcountofstudenteachsemester	= $element->find("td[3]/a" , 0)->plaintext;
 						$number = $totalcountofstudenteachsemester / 20;
 						$Pages =(int)$number;
@@ -21,10 +22,12 @@ for($i = 0; $i < count($links); $i++)
 							if(is_object($urls))
 							{
 							$DAKUMENTPAGE = file_get_html($urls);
-								if(is_object($DAKUMENTPAGE))
+								if($DAKUMENTPAGE)
 								{
 									foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
 									{
+										if(is_object($SARTOUT))
+										{
 										$SerNo = $SARTOUT->find("td", 0)->plaintext;
 										$NIM = $SARTOUT->find("td", 1)->plaintext;
 										$Name = $SARTOUT->find("td" , 2)->plaintext;
@@ -34,9 +37,8 @@ for($i = 0; $i < count($links); $i++)
 										for($loopo = 0 ; $loopo < sizeof($data); $loopo++)
 										{
 												// $URL = $data[$loopo];
-												$Pagestudent = file_get_html($data[$loopo]);
-												
-											if(is_object($Pagestudent))
+											$Pagestudent = file_get_html($data[$loopo]);
+											if($Pagestudent)
 											{
 											//This is Details of Students.
 											$Nama 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
@@ -57,9 +59,9 @@ for($i = 0; $i < count($links); $i++)
                                              'Semester' => $Semester, 
                                              'Status_Awal' => $Status_Awal, 
                                              'Status_Mahasiswa' => $Status_Mahasiswa));				
-										
+											
 									
-								
+											}	
 										}								
 
 									}
