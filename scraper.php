@@ -34,7 +34,7 @@ for($i = 0; $i < count($links); $i++)
 										for($loopo = 0 ; $loopo < sizeof($data); $loopo++)
 										{
 												$URL = $data[$loopo];
-												$Pagestudent = file_get_html($URL);
+												$Pagestudent += file_get_html($URL);
 												
 											if($Pagestudent != null || $Pagestudent != "")
 											{
