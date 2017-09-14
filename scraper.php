@@ -52,7 +52,7 @@ for($i = 0; $i < count($links); $i++)
 											     'Semester' 	=> $info['Semester'], 
 											     'Status_Awal' 	=> $info['Status_Awal'], 
 											     'Status_Mahasiswa' => $info['Status_Mahasiswa']));				
-											
+ 												$Pagestudent->__destruct();
 									
 																		
 											 
