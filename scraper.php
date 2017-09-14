@@ -30,9 +30,7 @@ for($i = 0; $i < count($links); $i++)
 										$data = array($Namehref);
 										for($loopo = 1 ; $loopo < sizeof($data); $loopo++)
 										{
-												$URL = $data[$loopo];
-												$Pagestudent = file_get_html($URL);
-												echo $Pagestudent;
+													echo $loopo;
 										
 										}
 									}
