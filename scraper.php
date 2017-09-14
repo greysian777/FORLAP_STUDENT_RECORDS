@@ -32,10 +32,8 @@ for($i = 0; $i < count($links); $i++)
 										{
 												$URL = $data[$loopo];
 												$Pagestudent = file_get_html($URL);
-											if($Pagestudent)
-											{
-											echo $Pagestudent;
-											}
+												echo $Pagestudent;
+										
 										}
 									}
 							}
