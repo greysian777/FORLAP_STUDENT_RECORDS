@@ -20,7 +20,7 @@ for($i = 0; $i < count($links); $i++)
 							$urls =  $student . "/". $loop;
 							if($urls)
 							{
-								echo $url;s
+								echo $urls;
 							}
 						}
 				
