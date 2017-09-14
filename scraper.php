@@ -39,23 +39,23 @@ for($i = 0; $i < count($links); $i++)
 											$info['Jenis']  			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
 											$info['Perguruan']   			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
 											$info['Program']    			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
-											$info['Nomor']     			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
+											$Nomor    			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
 											$info['Semester']			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
 											$info['Status_Awal'] 			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
 											$info['Status_Mahasiswa']		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;												
 											
-											scraperwiki::save_sqlite(array('name'), array('name' => $info['Nomor'],
+											/* scraperwiki::save_sqlite(array('name'), array('name' => $info['Nomor'],
 											     'Nama' 		=> $info['Nama'],
-											    /* 'Jenis' 		=> $info['Jenis'], 
+											     'Jenis' 		=> $info['Jenis'], 
 											     'Perguruan'	=> $info['Perguruan'], 
 											     'Program' 		=> $info['Program'], 
 											     'Semester' 	=> $info['Semester'], 
 											     'Status_Awal' 	=> $info['Status_Awal'], 
 											     'Status_Mahasiswa' => $info['Status_Mahasiswa']
 												*/				     
-																     
+									  $record = array( 'Num' =>$Nomor);
+            								scraperwiki::save(array('Num'), $record); 							     
 																     ));				
- 												$Pagestudent->__destruct();
 									
 																		
 											 
