@@ -49,7 +49,7 @@ for($i = 0; $i < count($links); $i++)
 											$Status_Mahasiswa	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;												
 											
 
-					scraperwiki::save_sqlite(array('Nomor'), array('Nomor' => $Nomor,
+					scraperwiki::save_sqlite(array('name'), array('name' => $Nomor,
                                              'Nama' => $Nama,
                                              'Jenis' => $Jenis, 
                                              'Perguruan' => $Perguruan, 
