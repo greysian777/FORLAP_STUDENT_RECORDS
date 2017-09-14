@@ -30,11 +30,8 @@ for($i = 0; $i < count($links); $i++)
 									
 										if($Namehref != null || $Namehref != "")
 										{
-										echo "1 = >" . $Namehref;
-										}
-										/*	$Pagestudent = file_get_html($Namehref);
-											if($Pagestudent)
-											{
+											$Pagestudent = file_get_html($Namehref);
+											
 											//This is Details of Students.
 											$Nama 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
 											$Jenis  			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
@@ -56,7 +53,9 @@ for($i = 0; $i < count($links); $i++)
 											
 									
 																		
-											} */
+											 
+										}
+										
 										
 									}
 							}
