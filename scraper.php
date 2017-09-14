@@ -27,6 +27,7 @@ for($i = 0; $i < count($links); $i++)
 										$NIM = $SARTOUT->find("td", 1)->plaintext;
 										$Name = $SARTOUT->find("td" , 2)->plaintext;
 										$Namehref = $SARTOUT->find("td/a" , 0)->href;
+										$data = array($Namehref);
 										for($loopo = 1 ; $loopo < sizeof($data); $loopo++)
 										{
 												$URL = $data[$loopo];
@@ -34,23 +35,23 @@ for($i = 0; $i < count($links); $i++)
 											if($Pagestudent)
 											{
 											//This is Details of Students.
-											$Nama 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
-											$Jenis  			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
-											$Perguruan   		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
-											$Program    		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
-											$Nomor     			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
-											$Semester			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
-											$Status_Awal 		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
-											$Status_Mahasiswa	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;	
+											echo $Nama 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
+											$Jenis  				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
+											$Perguruan   				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
+											$Program    				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
+											$Nomor     				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
+											$Semester				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
+											$Status_Awal 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
+											$Status_Mahasiswa			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;	
 											
-					scraperwiki::save_sqlite(array('name'), array('name' => $Nomor,
-                                             'Nama' => $Nama,
-                                             'Jenis' => $Jenis, 
-                                             'Perguruan' => $Perguruan, 
-                                             'Program' => $Program, 
-                                             'Semester' => $Semester, 
-                                             'Status_Awal' => $Status_Awal, 
-                                             'Status_Mahasiswa' => $Status_Mahasiswa));	
+										      scraperwiki::save_sqlite(array('name'), array('name' => $Nomor,
+										     'Nama' => $Nama,
+										     'Jenis' => $Jenis, 
+										     'Perguruan' => $Perguruan, 
+										     'Program' => $Program, 
+										     'Semester' => $Semester, 
+										     'Status_Awal' => $Status_Awal, 
+										     'Status_Mahasiswa' => $Status_Mahasiswa));	
 											}
 										}
 									}
