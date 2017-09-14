@@ -1,7 +1,6 @@
 <?
 require 'scraperwiki.php';
-
-require 'simple_html_dom.php';
+require 'scraperwiki/simple_html_dom.php';
 $links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC00QUJBLUI3REYtODU4REFBRkQ4OTRC");
 for($i = 0; $i < count($links); $i++)
 	{
@@ -50,36 +49,16 @@ for($i = 0; $i < count($links); $i++)
 											$Status_Mahasiswa	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;												
 											
 
-											$servername = "localhost";
-											$username = "root";
-											$password = "";
-											$dbname = "indonesia";
-
-											// Create connection
-											$conn = new mysqli($servername, $username, $password, $dbname);
-											// Check connection
-											if ($conn->connect_error) 
-											{
-												die("Connection failed: " . $conn->connect_error);
-											} 
-
-											$sql = "INSERT INTO forlap (Pagestudent ,Nama, Jenis , Perguruan , Program , Nomor , Semester , Status_Awal , Status_Mahasiswa)
-											VALUES ('$URL ','$Nama', '$Jenis' , '$Perguruan' , '$Program' , '$Nomor' , '$Semester' , '$Status_Awal' , '$Status_Mahasiswa')";
-
-											if ($conn->query($sql) === TRUE) 
-											{
-												echo 'Added';
-												echo '<br/>';
-											} else 
-											{
-												echo 'Error: ' . $sql . '<br>' . $conn->error;
-											}
-
-											$conn->close();			
-								
-          
-
-			
+					scraperwiki::save_sqlite(array('Nomor'), array('Nomor' => $Nomor,
+                                             'Nama' => $Nama,
+                                             'Jenis' => $Jenis, 
+                                             'Perguruan' => $Perguruan, 
+                                             'Program' => $Program, 
+                                             'Semester' => $Semester, 
+                                             'Status_Awal' => $Status_Awal, 
+                                             'Status_Mahasiswa' => $Status_Mahasiswa
+                                             
+                                             ));				
 										
 									
 								
