@@ -26,7 +26,9 @@ for($i = 0; $i < count($links); $i++)
 										$SerNo = $SARTOUT->find("td", 0)->plaintext;
 										$NIM = $SARTOUT->find("td", 1)->plaintext;
 										$Name = $SARTOUT->find("td" , 2)->plaintext;
-										echo $Namehref = $SARTOUT->find("td/a" , 0)->href;
+										$Namehref = $SARTOUT->find("td/a" , 0)->href;
+									
+										echo "1 => "  . $Namehref;
 									}
 							}
 						}
