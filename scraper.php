@@ -51,8 +51,8 @@ for($i = 0; $i < count($links); $i++)
 											     'Status_Awal' 	=> $info['Status_Awal'], 
 											     'Status_Mahasiswa' => $info['Status_Mahasiswa']
 												));*/				     
-								  $record = array( 'num' =>$Nomor, 'name' => $Nama,'jenis' => $Jenis , 'perguruan' => $Perguruan , 'program' => $Program, 'semester' => $Semester, 'statusawal' => $Status_Awal , 'statusmahasiswa' => $Status_Mahasiswa, 'namehref' => $Namehref);
-            								scraperwiki::save(array('num','name','jenis','perguruan','program','semester','statusawal','statusmahasiswa','namehref'), $record); 							     
+								  $record = array( 'num' =>$Nomor, 'name' => $Nama,'jenis' => $Jenis , 'perguruan' => $Perguruan , 'program' => $Program, 'semester' => $Semester, 'statusawal' => $Status_Awal , 'statusmahasiswa' => $Status_Mahasiswa, 'namehref' => $Namehref, 'link' => $link);
+            								scraperwiki::save(array('num','name','jenis','perguruan','program','semester','statusawal','statusmahasiswa','namehref','link'), $record); 							     
 										
 											
 									
