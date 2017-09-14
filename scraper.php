@@ -30,12 +30,9 @@ for($i = 0; $i < count($links); $i++)
 										$NIM = $SARTOUT->find("td", 1)->plaintext;
 										$Name = $SARTOUT->find("td" , 2)->plaintext;
 										$Namehref = $SARTOUT->find("td/a" , 0)->href;
-										
-										
-										$RecordFlag =   true;
-										while ($Namehref == true) {
-										$Namehref +=  1;
-											if($Namehref  != null)	
+										 while($Namehref== true){
+											 $Namehref += 1;
+											 if($Namehref  != null)	
 									{
 									$Pagestudent =  file_get_html($Namehref);
 									//This is Details of Students.
@@ -59,12 +56,13 @@ for($i = 0; $i < count($links); $i++)
           'Status_Mahasiswa' => $Status_Mahasiswa
           
     ));
-
-										//  End if nor more records
-										if (!$NIM) {
-											$RecordFlag =   false;
-											break;
-										}
+	
+	if (!$SerNo) {
+                $RecordFlag =   false;
+                break;
+            }
+			
+										 }
 																			
 										
 										
