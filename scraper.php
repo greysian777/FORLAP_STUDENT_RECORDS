@@ -55,8 +55,8 @@ for($i = 0; $i < count($links); $i++)
             								scraperwiki::save(array('num'), $record); 							     
 									*/	
 											
-											  $record = array( 'num' =>$Nomor, 'Nama' => $Nama);
-            								scraperwiki::save(array('num','Nama'), $record); 
+											  $record = array( 'num' =>$Nomor, 'name' => $Nama);
+            								scraperwiki::save(array('num','name'), $record); 
 									
 																		
 											 
