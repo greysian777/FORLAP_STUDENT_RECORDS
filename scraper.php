@@ -20,7 +20,8 @@ for($i = 0; $i < count($links); $i++)
 							$urls =  $student . "/". $loop;
 							if($urls !== "/0")
 							{
-								echo $urls;
+								$DAKUMENTPAGE = file_get_html($urls);
+								echo $DAKUMENTPAGE;
 							}
 						}
 				
