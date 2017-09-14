@@ -7,7 +7,8 @@ for($i = 0; $i < count($links); $i++)
 			$link = file_get_html($links[$i]);
 			foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element)
 					{
-					if(is_object($element)){
+					if(is_object($element))
+						{
 						$totalcountofstudenteachsemester	= $element->find("td[3]/a" , 0)->plaintext;
 						$number = $totalcountofstudenteachsemester / 20;
 						$Pages =(int)$number;
@@ -76,5 +77,5 @@ for($i = 0; $i < count($links); $i++)
 		
 		}
 	
-
+							}}}}}
 ?>
