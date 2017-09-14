@@ -1,6 +1,7 @@
 <?
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
+$links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC00QUJBLUI3REYtODU4REFBRkQ4OTRC");
 for($i = 0; $i < count($links); $i++)
 	{
 			$link = file_get_html($links[$i]);
@@ -33,20 +34,23 @@ for($i = 0; $i < count($links); $i++)
 										$data = array($Namehref);
 										for($loopo = 0 ; $loopo < sizeof($data); $loopo++)
 										{
-											$URL = $data[$loopo];
-									$Pagestudent =  file_get_html($URL);		
+												$URL = $data[$loopo];
+												$Pagestudent = file_get_html($URL);
+												
+									if($Pagestudent)
+									{
 									//This is Details of Students.
 									$Nama 			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
 									$Jenis  		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[2]/td[3]",0)->plaintext;
 									$Perguruan   		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
 									$Program    		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
-									$Nomor     		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
+									echo $Nomor     		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
+									echo "<br/>";
 									$Semester		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
 									$Status_Awal 		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
-									$Status_Mahasiswa	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;
+									$Status_Mahasiswa	= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;												
 									
-									
-										scraperwiki::save_sqlite(array('name'), 
+									scraperwiki::save_sqlite(array('name'), 
     array('name' => $Nomor, 
           'Nama' => $Nama, 
           'Jenis' => $Jenis,
@@ -56,6 +60,9 @@ for($i = 0; $i < count($links); $i++)
           'Status_Mahasiswa' => $Status_Mahasiswa
           
     ));
+			
+									}
+									
 										}
 
 									}
