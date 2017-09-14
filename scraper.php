@@ -5,7 +5,7 @@ $links = array("https://forlap.ristekdikti.go.id/prodi/detail/MzM5RDRFRUUtODcwRC
 for($i = 0; $i < count($links); $i++)
 	{
 			$link = file_get_html($links[$i]);
-			if($link)
+			if(!$link)
 			{
 				foreach($link->find("//[@id='mahasiswa']/table/tbody/tr") as $element)
 					{
@@ -21,7 +21,7 @@ for($i = 0; $i < count($links); $i++)
 							if($urls != "/0")
 							{
 							$DAKUMENTPAGE = file_get_html($urls);
-								if($DAKUMENTPAGE)
+								if(!$DAKUMENTPAGE)
 								{
 									foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
 									{
@@ -36,7 +36,7 @@ for($i = 0; $i < count($links); $i++)
 												$URL = $data[$loopo];
 												$Pagestudent = file_get_html($URL);
 												
-											if($Pagestudent)
+											if(!$Pagestudent)
 											{
 											//This is Details of Students.
 											$Nama 				= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
