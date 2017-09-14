@@ -12,7 +12,19 @@ for($i = 0; $i < count($links); $i++)
 				$totalcountofstudenteachsemester	= 	$element->find("td[3]/a" , 0)->plaintext;
 				$number 				= 	$totalcountofstudenteachsemester / 20;
 				$Pages 					=   	(int)$number;
-				echo $student 				= 	$element->find("td[3]/a" , 0)->href;
+				$student 				= 	$element->find("td[3]/a" , 0)->href;
+				
+				
+						for($loop = 0; $loop <= $totalcountofstudenteachsemester; $loop+=20)
+						{
+							$urls =  $student . "/". $loop;
+							if($urls)
+							{
+								echo $url;s
+							}
+						}
+				
+				
 			}
 				}
 	}
