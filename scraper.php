@@ -20,7 +20,7 @@ for($i = 0; $i < count($links); $i++)
 						for($loop = 0; $loop <= $totalcountofstudenteachsemester; $loop+=20)
 						{
 							$urls =  $student . "/". $loop;
-							if($urls !== "/0" || $urls != null || $urls != "")
+							if($urls !== "/0" || $urls !==  null || $urls !==  "")
 							{
 								$DAKUMENTPAGE = file_get_html($urls);
 								foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
