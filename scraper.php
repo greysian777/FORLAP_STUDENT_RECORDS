@@ -18,11 +18,12 @@ for($i = 0; $i < count($links); $i++)
 				$Pages 					=   	(int)$number;
 				$student 				= 	$element->find("td[3]/a" , 0)->href;
 				
-				
+					if($student)
+					{
 						for($loop = 0; $loop <= $totalcountofstudenteachsemester; $loop+=20)
 						{
 							$urls =  $student . "/". $loop;
-							if($urls !== "/0" || $urls != null || $urls != "")
+							if($urls !== "/0")
 							{
 								$DAKUMENTPAGE = file_get_html($urls);
 								foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
@@ -66,13 +67,10 @@ for($i = 0; $i < count($links); $i++)
 										
 										
 									}
-							}else
-										{
-											break;
-										}
+							}
 						}
 				
-				
+					}
 			}
 				}
 	}
