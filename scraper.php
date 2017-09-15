@@ -20,7 +20,7 @@ for($i = 0; $i < count($links); $i++)
 						for($loop = 0; $loop <= $totalcountofstudenteachsemester; $loop+=20)
 						{
 							$urls =  $student . "/". $loop;
-							if($urls !== "/0")
+							if($urls !== "/0" || $urls != null || $urls != "")
 							{
 								$DAKUMENTPAGE = file_get_html($urls);
 								foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
@@ -30,8 +30,6 @@ for($i = 0; $i < count($links); $i++)
 										$Name 		= $SARTOUT->find("td" , 2)->plaintext;
 										$Namehref 	= $SARTOUT->find("td/a" , 0)->href;
 									
-										if($Namehref != null || $Namehref != "")
-										{
 											$Pagestudent = file_get_html($Namehref);
 											
 											//This is Details of Students.
@@ -44,15 +42,7 @@ for($i = 0; $i < count($links); $i++)
 											$Status_Awal 			= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
 											$Status_Mahasiswa		= $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;												
 											
-											/* scraperwiki::save_sqlite(array('name'), array('name' => $info['Nomor'],
-											     'Nama' 		=> $info['Nama'],
-											     'Jenis' 		=> $info['Jenis'], 
-											     'Perguruan'	=> $info['Perguruan'], 
-											     'Program' 		=> $info['Program'], 
-											     'Semester' 	=> $info['Semester'], 
-											     'Status_Awal' 	=> $info['Status_Awal'], 
-											     'Status_Mahasiswa' => $info['Status_Mahasiswa']
-												));*/				     
+														     
 								  $record = array( 'num' =>$Nomor, 'name' => $Nama,'jenis' => $Jenis , 'perguruan' => $Perguruan , 'program' => $Program, 'semester' => $Semester, 'statusawal' => $Status_Awal , 'statusmahasiswa' => $Status_Mahasiswa, 'namehref' => $Namehref, 'link' => $links[$i]);
             								scraperwiki::save(array('num','name','jenis','perguruan','program','semester','statusawal','statusmahasiswa','namehref','link'), $record); 							     
 										
@@ -60,7 +50,7 @@ for($i = 0; $i < count($links); $i++)
 									
 																		
 											 
-										}
+										
 										
 										
 									}
