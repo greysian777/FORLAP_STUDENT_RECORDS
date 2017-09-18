@@ -1,27 +1,7 @@
 <?
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
-$links = array("https://forlap.ristekdikti.go.id/prodi/detail/OEJDQjE0QTYtMzE1Ri00RjY1LUJFQkItQTQ1QzlFMEIyREY1",
-"https://forlap.ristekdikti.go.id/prodi/detail/QjAwRkIwREUtMUVCOC00MEMwLTk1MDctQjQ3NzlGRUM5MzQ5",
-"https://forlap.ristekdikti.go.id/prodi/detail/MDc1MDUxREItNDE3Ri00NDc4LUEyODgtRTEwRkFFODQyRDE3",
-"https://forlap.ristekdikti.go.id/prodi/detail/RDdGQUEwRTgtQTIzNC00OTA0LUIzRjgtNUNFNDlBOTVFQkVE",
-"https://forlap.ristekdikti.go.id/prodi/detail/NDI1Q0I5MTAtOTZGMy00MTFCLUIxNjItRkE1MzRGNTgyMEQ5",
-"https://forlap.ristekdikti.go.id/prodi/detail/Q0RGMDE1QjctNUM5RC00RTY4LTk4MUItODZDNDM0NkI0ODgz",
-"https://forlap.ristekdikti.go.id/prodi/detail/ODI2MTU3RUQtMTI3Ni00NjE0LUE2OTQtNzRCMDM1QjZBMjcz",
-"https://forlap.ristekdikti.go.id/prodi/detail/NEFCOEFFMEUtRDZDNS00NjQ2LTg5MDMtQTRDRkFENUU3NzIy",
-"https://forlap.ristekdikti.go.id/prodi/detail/RTY0NUJBODctRDdDQy00QjY0LUFEQTgtMTY3MzhFNjcxQkZD",
-"https://forlap.ristekdikti.go.id/prodi/detail/OTlCN0M1MkMtMzNDMy00MDY1LUE1QTItODc0OTU2MEZBRDY0",
-"https://forlap.ristekdikti.go.id/prodi/detail/QjJEMUZDMjItQjlBNS00MDAwLUFFNTktN0VBNkUzNTg1MDI4",
-"https://forlap.ristekdikti.go.id/prodi/detail/RkMzRTJDRkMtNjU3RC00M0I5LUJFNzEtOEExNkY0REJGRTI1",
-"https://forlap.ristekdikti.go.id/prodi/detail/MDBGOTI2REEtNTQ5NS00RDExLTg3NjQtNERFMkRFM0Y3RkUw",
-"https://forlap.ristekdikti.go.id/prodi/detail/MTFDNjdDNDUtQkQ4Mi00QUIxLUJGREEtOTE2OUREOEFDMDNB",
-"https://forlap.ristekdikti.go.id/prodi/detail/Q0IzMkZEOUUtNzg5MC00Qzk4LThEQzItRDVERUZFRTFCQjU2",
-"https://forlap.ristekdikti.go.id/prodi/detail/MDBFMjU2RjYtRkYwNy00MUY5LUEwQTAtNkEyRERGNkY5NjQ3",
-"https://forlap.ristekdikti.go.id/prodi/detail/MTIyOEQxMjItMTIwQi00QkM4LTk2M0ItRUM4OTA3QTY2ODlF",
-"https://forlap.ristekdikti.go.id/prodi/detail/N0Y5NjFBNzEtRDNBNy00QTQ5LUI4QTAtNDlFRDcxMEY2RkE2",
-"https://forlap.ristekdikti.go.id/prodi/detail/NDZEREFBNEYtQTUyNS00MzU5LThBNTEtRDQwNDU0NjA0RTdB",
-"https://forlap.ristekdikti.go.id/prodi/detail/RjMyRTNFRTAtQUJFRi00ODI4LThCMjctMjUxMEZDNDVBRkUx",
-"https://forlap.ristekdikti.go.id/prodi/detail/ODQzQTQ0NDItRjU5OS00RDM3LUEwNkUtRDUxNDAwQjM2RDU4"	
+$links = array("https://forlap.ristekdikti.go.id/prodi/detail/ODQzQTQ0NDItRjU5OS00RDM3LUEwNkUtRDUxNDAwQjM2RDU4"	
 );
 for($i = 0; $i < count($links); $i++)
  {
