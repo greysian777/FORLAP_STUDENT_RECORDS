@@ -34,8 +34,11 @@ for($i = 0; $i < count($links); $i++)
           for($loopo = 0 ; $loopo < sizeof($data); $loopo++)
           {
            $URL = $data[$loopo];
+		   if($URL != "")
+			{
+		   echo ' = > '.$URL.'<br/>';
 		   $Pagestudent    =   file_get_html($URL);
-		   if($Pagestudent != null)
+		   if($Pagestudent)
 		   {
 		   //This is Details of Students.
            $Nama    = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[1]/td[3]",0)->plaintext;
@@ -43,8 +46,7 @@ for($i = 0; $i < count($links); $i++)
            $Perguruan     = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
            $Program      = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
            $Nomor       = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
-           echo ' = > '.$Nomor.'<br/>';
-		   $Semester  = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
+            $Semester  = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
            $Status_Awal   = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
            $Status_Mahasiswa = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;
 	   
@@ -52,7 +54,9 @@ for($i = 0; $i < count($links); $i++)
 			   
 			   $record = array( 'num' =>$Nomor, 'name' => $Nama,'jenis' => $Jenis , 'perguruan' => $Perguruan , 'program' => $Program, 'semester' => $Semester, 'statusawal' => $Status_Awal , 'statusmahasiswa' => $Status_Mahasiswa, 'namehref' => $Namehref, 'link' => $links[$i]);
            scraperwiki::save(array('num','name','jenis','perguruan','program','semester','statusawal','statusmahasiswa','namehref','link'), $record); 
-/*			   
+		   }}
+			   
+			   /*			   
 			   $servername = "localhost";
            $username = "root";
            $password = "";
