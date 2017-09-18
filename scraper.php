@@ -56,10 +56,10 @@ for($i = 0; $i < count($links); $i++)
 		  }
 		   
 		  
-			   
+			   if($Nomor != ""){
 			   $record = array( 'num' =>$Nomor, 'name' => $Nama,'jenis' => $Jenis , 'perguruan' => $Perguruan , 'program' => $Program, 'semester' => $Semester, 'statusawal' => $Status_Awal , 'statusmahasiswa' => $Status_Mahasiswa, 'namehref' => $Namehref, 'link' => $links[$i]);
            scraperwiki::save(array('num','name','jenis','perguruan','program','semester','statusawal','statusmahasiswa','namehref','link'), $record); 
-		  
+			   }
 /*			   
 			   $servername = "localhost";
            $username = "root";
