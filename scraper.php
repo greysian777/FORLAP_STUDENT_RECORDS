@@ -1,6 +1,9 @@
-<?
+<?php
+//require 'simple_html_dom.php';
+
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
+
 $links = array("https://forlap.ristekdikti.go.id/prodi/detail/ODQzQTQ0NDItRjU5OS00RDM3LUEwNkUtRDUxNDAwQjM2RDU4"	
 );
 for($i = 0; $i < count($links); $i++)
@@ -25,12 +28,12 @@ for($i = 0; $i < count($links); $i++)
         {
          foreach($DAKUMENTPAGE->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr") as $SARTOUT)
          {
-          $SerNo = $SARTOUT->find("td", 0)->plaintext;
+		  $SerNo = $SARTOUT->find("td", 0)->plaintext;
           $NIM = $SARTOUT->find("td", 1)->plaintext;
           $Name = $SARTOUT->find("td" , 2)->plaintext;
           $Namehref = $SARTOUT->find("td/a" , 0)->href;
-                    
-          $data = array($Namehref);
+		  
+		  $data = array($Namehref);
           for($loopo = 0 ; $loopo < sizeof($data); $loopo++)
           {
            $URL = $data[$loopo];
@@ -46,17 +49,18 @@ for($i = 0; $i < count($links); $i++)
            $Perguruan     = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[4]/td[3]",0)->plaintext;
            $Program      = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[5]/td[3]",0)->plaintext;
            $Nomor       = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[6]/td[3]",0)->plaintext;
-            $Semester  = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
+		   $Semester  = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[7]/td[3]",0)->plaintext;
            $Status_Awal   = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[8]/td[3]",0)->plaintext;
            $Status_Mahasiswa = $Pagestudent->find("/html/body/div[2]/div[2]/div[2]/div[1]/div/table/tbody/tr[9]/td[3]",0)->plaintext;
-	   
-			   
+		   }
+		  }
+		   
+		  
 			   
 			   $record = array( 'num' =>$Nomor, 'name' => $Nama,'jenis' => $Jenis , 'perguruan' => $Perguruan , 'program' => $Program, 'semester' => $Semester, 'statusawal' => $Status_Awal , 'statusmahasiswa' => $Status_Mahasiswa, 'namehref' => $Namehref, 'link' => $links[$i]);
            scraperwiki::save(array('num','name','jenis','perguruan','program','semester','statusawal','statusmahasiswa','namehref','link'), $record); 
-		   }}
-			   
-			   /*			   
+		  
+/*			   
 			   $servername = "localhost";
            $username = "root";
            $password = "";
@@ -132,9 +136,9 @@ for($i = 0; $i < count($links); $i++)
           
          */
         
-                  
+               
 
-         
+         }
         }
        }
        
@@ -149,5 +153,5 @@ for($i = 0; $i < count($links); $i++)
   
   }
  }
-}
+
 ?>
