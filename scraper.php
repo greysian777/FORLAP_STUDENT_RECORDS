@@ -4,7 +4,7 @@
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
 
-$links = array("https://forlap.ristekdikti.go.id/prodi/detail/ODQzQTQ0NDItRjU5OS00RDM3LUEwNkUtRDUxNDAwQjM2RDU4"	
+$links = array("https://forlap.ristekdikti.go.id/prodi/detail/NUQ0REJCRDUtNEE4Ny00Q0YzLUI1QTMtMjYwNjFFQjdGMkNF"	
 );
 for($i = 0; $i < count($links); $i++)
  {
