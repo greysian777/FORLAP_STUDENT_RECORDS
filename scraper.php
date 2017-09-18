@@ -39,11 +39,11 @@ for($i = 0; $i < count($links); $i++)
            $URL = $data[$loopo];
 		   if($URL != "")
 			{
-		   echo ' = > '.$URL.'<br/>';
+		   echo "$URL...\n";
+ 			  sleep(2);
 		   $Pagestudent    =   file_get_html($URL);
 			   
-			   echo "$URL...\n";
- 			  sleep(2);
+			   
 		   if($Pagestudent)
 		   {
 			   sleep(2);
